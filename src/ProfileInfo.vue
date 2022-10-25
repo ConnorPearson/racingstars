@@ -5,7 +5,7 @@
 
         <div class="image"></div>
 
-        <h3>User Profile</h3>
+        <h3>Birthday Calculator</h3>
 
         <p>Please enter your birthday below and click 'Get Birthday Stats' to calculate the days since you were born and the days until your next birthday!</p>
 
@@ -16,7 +16,7 @@
             </th>
 
             <th>   
-              <input type="date" id="birthday" name="birthday" v-model="birthday">
+              <input type="date" id="birthday" name="birthday" v-model="birthday" required>
             </th>
           </tr>
         </table>
