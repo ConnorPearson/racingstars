@@ -76,7 +76,18 @@
         // Ensure a valid date is entered, if not exit script
         if ( !(birthdate instanceof Date && !isNaN(birthdate)) ) {
           console.log("Invalid date value provided.")
+
+          alert("Invalid date value provided.")
           
+          return 0;
+        }
+
+        // Ensure the provided date is in the past.
+        if (currentDate.getTime() < birthdate.getTime()){
+          console.log("Given birthdate has not yet happened.");
+
+          alert("Given birthdate has not yet happened.")
+
           return 0;
         }
 
@@ -91,6 +102,10 @@
         // Calculate difference between dates in miliseconds and divide by milliseconds in a day. Round down for display purposes.
         this.daysUntilBirthday = Math.floor((nextBirthday.getTime() - currentDate.getTime()) / (1000 * 60 * 60 * 24));
         this.daysSinceBirthdate = Math.floor((currentDate.getTime() - birthdate.getTime()) / (1000 * 60 * 60 * 24));
+
+        if (this.daysUntilBirthday === 364) {
+          alert("🥳 Happy Birthday! 🥳")
+        }
       }
     }
   }
